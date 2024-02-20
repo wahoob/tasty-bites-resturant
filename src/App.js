@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Navbar, Header, Topbar, About, RotatingPlat, Menu, Chefs, BookTable, Footer, Contact } from './components'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Topbar />
+      <Navbar />
+      <Header />
+      <About />
+      <Menu />
+      <div className='flex justify-center bg-custom-bg py-12'>
+        <hr className='border-dotted border-0 border-b-[10px] border-[#BB7770] w-1/4 hover:border-[#874239]' />
+      </div>
+      <RotatingPlat />
+      <Chefs />
+      <BookTable />
+      <div className='flex justify-center bg-custom-bg py-20'>
+        <hr className='border-dotted border-0 border-b-[10px] border-[#BB7770] w-1/4 hover:border-[#874239]' />
+      </div>
+      <Contact />
+      <Footer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

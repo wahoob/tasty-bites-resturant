@@ -1,13 +1,227 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+html {
+    scroll-behavior: smooth;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.video-btn {
+    width: 5.5rem;
+    height: 5.5rem;
+    background: radial-gradient(#f3ad59 50%, rgba(205, 164, 94, 0.4) 52%);
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
 }
+
+.video-btn:hover {
+    background: none;
+    background: radial-gradient(#f3ad59 50%, transparent 52%);
+    background-color: #F3AD59;
+    transition-delay: 0.23s;
+}
+
+/* the button triangle */
+.video-btn::before {
+    content: "";
+    position: absolute;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 15px solid #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.video-btn:hover::before {
+    animation: triangle-animation 0.4s linear 0s 1 normal none;
+}
+
+
+@keyframes triangle-animation {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+    90% {
+        transform: translate(-50%, -50%) scale(15);
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* the button outerline */
+.video-btn::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 3px solid #f3ad59;
+    opacity: 0.5;
+    animation: video-btn-animation 3s linear 0s infinite normal none;
+}
+
+.video-btn:hover::after {
+    animation: none;
+}
+
+@keyframes video-btn-animation {
+    from {
+        width: 20%;
+        height: 20%;
+    }
+
+    to {
+        width: 120%;
+        height: 120%;
+    }
+}
+
+.scale-animation {
+    animation: scale-animation 1s linear 0s 1 alternate none;
+}
+
+@keyframes scale-animation {
+
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-2px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(2px, 0, 0);
+    }
+}
+
+.about-img-container::before,
+.about-img-container::after {
+    content: "";
+    position: absolute;
+    border: 5px solid #F0992F;
+    border-bottom: 0;
+    border-right: 0;
+    width: 5rem;
+    height: 5rem;
+    left: 2em;
+    top: 2rem;
+    z-index: 999;
+    transition: 0.5s;
+}
+
+.about-img-container::after {
+    border: 5px solid #F0992F;
+    border-left: 0;
+    border-top: 0;
+    left: auto;
+    top: auto;
+    right: 2rem;
+    bottom: 2rem;
+}
+
+/*  */
+.border-y::before,
+.border-y::after {
+    content: "";
+    position: absolute;
+    background: #F0992F;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    transition: 0.2s;
+    transition-delay: 0.6s;
+}
+
+.border-y::after {
+    bottom: auto;
+    left: auto;
+    top: 0;
+    right: 0;
+    transition-delay: 0.2s;
+}
+
+.border-x::before,
+.border-x::after {
+    content: "";
+    position: absolute;
+    background: #F0992F;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 2px;
+    transition: 0.2s;
+}
+
+.border-x::after {
+    top: auto;
+    left: auto;
+    bottom: 0;
+    right: 0;
+    transition-delay: 0.4s;
+}
+
+.input-effect:focus~.border-y::before,
+.input-effect:focus~.border-y::after {
+    width: 100%;
+    transition: 0.2s;
+    transition-delay: 0.2s;
+}
+
+.input-effect:focus~.border-y::after {
+    transition-delay: 0.6s;
+}
+
+.input-effect:focus~.border-y .border-x::before,
+.input-effect:focus~.border-y .border-x::after {
+    height: 100%;
+    transition: 0.2s;
+}
+
+.input-effect:focus~.border-y .border-x::after {
+    transition-delay: 0.4s;
+}
+
+
+/* .rotate-image::after,
+.rotate-image::before {
+    content: "";
+    position: absolute;
+    border: 11px solid #F9D6AC;
+    border-left: 0;
+    border-bottom: 0;
+    width: 6rem;
+    height: 6.5rem;
+    top: -0.65rem;
+    right: -0.65rem;
+}
+
+.rotate-image::after {
+    border: 11px solid #F9D6AC;
+    border-right: 0;
+    border-top: 0;
+    top: auto;
+    right: auto;
+    bottom: -0.65rem;
+    left: -0.65rem;
+} */

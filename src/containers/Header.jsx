@@ -10,7 +10,8 @@ const Header = () => {
         }
     }
     return (
-        <div className='relative h-screen w-full bg-header-bg bg-cover bg-center bg-no-repeat bg-fixed flex gap-8 justify-between items-center px-32 max-lg:px-10 pt-24 max-sm:flex-col max-sm:justify-center' id='home'>
+        <div className='relative z-10 h-screen w-full bg-header-bg bg-cover bg-bottom bg-no-repeat bg-fixed flex gap-8 justify-between items-center px-32 max-lg:px-10 pt-24 max-sm:flex-col max-sm:justify-center' id='home'>
+            <div className='absolute inset-0 bg-header-bg-color -z-10' />
             <div className='text-white flex flex-col max-sm:items-center max-sm:text-center'>
                 <h1 className='text-5xl font-bold max-md:text-4xl'>Welcome to <span className='text-main-color'>Tasty Bites</span></h1>
                 <h3 className='text-[1.3rem] max-md:text-base'>Delivering great food for more than 5 years!</h3>

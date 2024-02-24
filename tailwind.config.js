@@ -6,13 +6,14 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'header-bg': "url('/src/images/header-bg.png')",
+        'header-bg': "url('/src/images/header-bg.jpg')",
         'about-bg': "url('/src/images/about-2.jpg')",
         'chefs-bg': "url('/src/images/chefs.jpg')",
       },
       colors: {
         'navbar-main': 'rgba(12, 11, 9, 0.6)',
         'navbar-scroll': 'rgba(0, 0, 0, 0.85)',
+        'header-bg-color': 'rgba(0, 0, 0, 0.45)',
         'about-bg-color': 'rgba(12, 11, 9, 0.7)',
         'main-color': '#F0992F',
         'white': '#E9E9EA',

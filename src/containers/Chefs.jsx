@@ -1,8 +1,6 @@
 import React from 'react'
-import chef1 from '../images/chef-1.jpg'
-import chef2 from '../images/chef-2.jpg'
-import chef3 from '../images/chef-3.jpg'
-import Chef from './Chef'
+import { chef1, chef2, chef3 } from '../images'
+import { Chef } from '../components'
 
 const chefs = [
     { id: 0, name: 'Gordon Ramsay', job: 'Executive Chef', image: chef3 },

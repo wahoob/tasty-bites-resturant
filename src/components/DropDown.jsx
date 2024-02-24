@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+//icons
 import { RiArrowDropUpLine } from 'react-icons/ri'
 
 const DropDown = ({ array, currentText, setCurrent, className, backgroundColor, innerPaddingY, hover, top, arrowSize, optionsBackgroundColor }) => {
@@ -10,7 +11,7 @@ const DropDown = ({ array, currentText, setCurrent, className, backgroundColor, 
     }
     useEffect(() => {
         const handler = (e) => {
-            if (!containerRef.current.contains(e.target)) setIsOpen(false)
+            if (!containerRef.current?.contains(e.target)) setIsOpen(false)
         }
         document.addEventListener('mousedown', handler)
     }, [])

@@ -6,7 +6,7 @@ const PER_PAGE = 12
 const AppContext = createContext()
 
 export const AppProvider = ({ children }) => {
-    const [scrolled, setScrolled] = useState(false)
+    const [scrolled, setScrolled] = useState(true)
     const [loading, setLoading] = useState(false)
     const [areas, setAreas] = useState([])
     const [currentArea, setCurrentArea] = useState('All')
@@ -16,6 +16,9 @@ export const AppProvider = ({ children }) => {
     const [currentList, setCurrentList] = useState([])
     const [pages, setPages] = useState(0)
     const [currentPage, setCurrentPage] = useState(1)
+    const [isSubmenuOpen, setIsSubmenuOpen] = useState(false)
+    const [location, setLocation] = useState({})
+    const [submenuText, setSubmenuText] = useState('')
     useEffect(() => {
         let handler = () => {
             if (window.scrollY >= 200) {
@@ -73,54 +76,44 @@ export const AppProvider = ({ children }) => {
         } else {
             categoryData = await fetchCategory(currentCategory)
         }
-
-        setLoading(false)
         setList(categoryData)
+        setLoading(false)
     }, [categories, currentCategory])
-    //
-
-    //
-
-    // const fetchArea = async (area) => {
-    //     const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${area}`)
-    //     const data = await response.json()
-    //     return data.meals
-    // }
-    // const fetchAreaData = useCallback(async () => {
-    //     setLoading(true)
-
-    //     let areaData = []
-    //     if (currentArea === 'All') {
-    //         for (const ar of areas) {
-    //             if (ar.text === 'All') continue
-    //             const data = await fetchArea(ar.text)
-    //             areaData = areaData.concat(data)
-    //         }
-    //     } else {
-    //         areaData = await fetchArea(currentArea)
-    //     }
-
-    //     setLoading(false)
-    //     setList(areaData)
-    // }, [areas, currentArea])
 
     useEffect(() => {
         getAreas()
         getCategories()
+        if (window.scrollY >= 200) {
+            setScrolled(true)
+        } else {
+            setScrolled(false)
+        }
     }, [])
     useEffect(() => {
         fetchCategoryData()
     }, [fetchCategoryData])
     useEffect(() => {
+        setLoading(true)
         setPages(Math.ceil(list.length / PER_PAGE))
         setCurrentPage(1)
+        setLoading(false)
     }, [list])
     useEffect(() => {
+        setLoading(true)
         const startIndex = (currentPage - 1) * PER_PAGE
         const endIndex = Math.min(startIndex + PER_PAGE, list.length)
         const current = list.slice(startIndex, endIndex)
         setCurrentList(current)
+        setLoading(false)
     }, [currentPage, list])
+    const openSubmenu = (text, coordinates) => {
+        setSubmenuText(text)
+        setLocation(coordinates)
+        setIsSubmenuOpen(true)
+    }
+    const closeSubmenu = () => {
+        setIsSubmenuOpen(false)
+    }
     // useEffect(() => {
     //     console.log(list)
     // }, [list])
@@ -135,9 +128,14 @@ export const AppProvider = ({ children }) => {
             currentList,
             currentPage,
             pages,
+            isSubmenuOpen,
+            location,
+            submenuText,
             setCurrentPage,
             setCurrentArea,
             setCurrentCategory,
+            openSubmenu,
+            closeSubmenu
         }}>
             {children}
         </AppContext.Provider>

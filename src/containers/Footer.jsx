@@ -1,8 +1,18 @@
 import React from 'react'
-import logo from '../images/logo.png'
+import { logo } from '../images'
+import { navLinks } from './Navbar'
+//icons
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa'
 
 const Footer = () => {
+    const scrollToSection = (id) => {
+        const element = document.getElementById(id)
+        if (element) {
+            const offsetTop = element.offsetTop
+            const scrollPosition = offsetTop - (window.innerHeight * 0.1)
+            window.scrollTo({ top: scrollPosition })
+        }
+    }
     return (
         <footer className='bg-custom-red py-6'>
             <div className='flex justify-between flex-wrap gap-12 py-12 px-32 max-lg:px-10'>
@@ -12,11 +22,16 @@ const Footer = () => {
                 </div>
                 <div className='flex flex-col text-white gap-1'>
                     <h4 className='mb-3 uppercase text-main-color font-semibold'>Useful Links</h4>
-                    <a href='#home' className='hover:text-main-color'>Home</a>
-                    <a href='#about' className='hover:text-main-color'>About</a>
-                    <a href='#menu' className='hover:text-main-color'>Menu</a>
-                    <a href='#chefs' className='hover:text-main-color'>Chefs</a>
-                    <a href='#contact' className='hover:text-main-color'>Contact</a>
+                    {navLinks.map(link => {
+                        const { id, text } = link
+                        return (
+                            <p key={id} className='hover:text-main-color transition-colors duration-300 cursor-pointer'
+                                onClick={() => scrollToSection(id)}
+                            >
+                                {text}
+                            </p>
+                        )
+                    })}
                 </div>
                 <div className='flex flex-col text-white gap-1'>
                     <h4 className='mb-3 uppercase text-main-color font-semibold'>Service</h4>

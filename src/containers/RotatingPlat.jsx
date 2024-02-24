@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax'
+import { plat, testimonials1, testimonials2, testimonials3, assest4, assest3 } from '../images'
+import { SectionHeader } from '../components'
+//icons
 import { ImQuotesLeft, ImQuotesRight } from 'react-icons/im'
-import plat from '../images/plat-1.png'
-import testimonials1 from '../images/testimonials-1.jpg'
-import testimonials2 from '../images/testimonials-2.jpg'
-import testimonials3 from '../images/testimonials-3.jpg'
-import assest4 from '../images/assest-4.png'
-import assest3 from '../images/assest-3.png'
-import SectionHeader from './SectionHeader'
 
 const testimonials = [
     { image: testimonials1, name: 'John D', text: 'Delicious dishes, outstanding service. A culinary gem! Will definitely return for more delightful experiences.' },

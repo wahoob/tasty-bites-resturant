@@ -1,5 +1,6 @@
 import React from 'react'
-import aboutPic from '../images/about.jpg'
+import { aboutPic } from '../images'
+//icons
 import { CiCircleCheck } from 'react-icons/ci';
 
 const About = () => {

@@ -1,0 +1,10 @@
+export { default as Header } from './Header' //container
+export { default as Navbar } from './Navbar' //container
+export { default as Topbar } from './Topbar' //container
+export { default as About } from './About' //container
+export { default as RotatingPlat } from './RotatingPlat' //container
+export { default as Menu } from './Menu' //container
+export { default as BookTable } from './BookTable' //container
+export { default as Chefs } from './Chefs' //container
+export { default as Contact } from './Contact' //container
+export { default as Footer } from './Footer' //container

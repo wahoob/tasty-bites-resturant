@@ -1,7 +1,8 @@
 import React from 'react'
+import { useGlobalContext } from '../context'
+//icons
 import { SlScreenSmartphone } from 'react-icons/sl'
 import { IoMdTime } from 'react-icons/io'
-import { useGlobalContext } from '../context'
 
 const Topbar = () => {
     const { scrolled } = useGlobalContext()

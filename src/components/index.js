@@ -1,12 +1,7 @@
-export { default as Header } from './Header'
-export { default as Navbar } from './Navbar'
-export { default as Topbar } from './Topbar'
-export { default as About } from './About'
-export { default as RotatingPlat } from './RotatingPlat'
-export { default as Menu } from './Menu'
-export { default as DropDown } from './DropDown'
-export { default as BookTable } from './BookTable'
-export { default as Chef } from './Chef'
-export { default as Chefs } from './Chefs'
-export { default as Contact } from './Contact'
-export { default as Footer } from './Footer'
+export { default as DropDown } from './DropDown' //component
+export { default as Chef } from './Chef' //component
+export { default as Submenu } from './Submenu' //component
+export { default as FixedInstructions } from './FixedInstructions' //component
+export { default as Search } from './Search' //component
+export { default as Loader } from './Loader' //component
+export { default as SectionHeader } from './SectionHeader' //component

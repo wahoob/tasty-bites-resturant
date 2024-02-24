@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { ImQuotesLeft, ImQuotesRight } from 'react-icons/im'
-import food from '../images/book-table.png'
-import DropDown from './DropDown'
+import { food } from '../images'
+import { DropDown } from '../components'
 import { getDates, getTimes } from '../util'
+//icons
+import { ImQuotesLeft, ImQuotesRight } from 'react-icons/im'
 
 const peopleArray = [
     { text: '1 PERSON' }, { text: '2 PERSON' }, { text: '3 PERSON' }, { text: '4 PERSON' }, { text: '5 PERSON' },

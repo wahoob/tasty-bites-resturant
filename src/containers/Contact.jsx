@@ -1,4 +1,5 @@
 import React from 'react'
+//icons
 import { FaLocationDot } from 'react-icons/fa6'
 import { IoMdTime } from 'react-icons/io'
 import { MdOutlineEmail } from 'react-icons/md'

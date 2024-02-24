@@ -27,6 +27,15 @@ module.exports = {
       transitionTimingFunction: {
         'custom-cubic': 'cubic-bezier(.84,-0.09,.94,1.12)',
       },
+      keyframes: {
+        loader: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        }
+      },
+      animation: {
+        'loading': 'loader 1s linear infinite',
+      }
     },
     fontFamily: {
       'sans': ['Poppins', 'sans-serif'],

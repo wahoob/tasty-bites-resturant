@@ -7,7 +7,7 @@ import { IoMdTime } from 'react-icons/io'
 const Topbar = () => {
     const { scrolled } = useGlobalContext()
     return (
-        <div className={`fixed z-10 left-0 right-0 h-10 flex justify-between max-sm:justify-center items-center px-32 max-lg:px-10 text-sm transition-all duration-500 ${scrolled ? '-top-10' : 'top-0'}`}>
+        <div className={`fixed z-20 left-0 right-0 h-10 flex justify-between max-sm:justify-center items-center px-32 max-lg:px-10 text-sm transition-all duration-500 ${scrolled ? '-top-10' : 'top-0'}`}>
             <div className='flex items-center gap-4'>
                 <div className='flex items-center gap-1 text-white'>
                     <SlScreenSmartphone className='h-4 w-4 text-main-color' />

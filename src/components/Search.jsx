@@ -79,7 +79,7 @@ const Search = ({ setIsSearchOpen, isSearchOpen }) => {
         <form className='flex items-center gap-2 relative' ref={formRef} onSubmit={handleSubmit}>
             <input type='text' ref={inputRef} value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className={`absolute right-10 bg-transparent outline-none text-white h-9 border-2 border-x-0 transition-all ease-in ${!isSearchOpen ? 'w-0' : 'w-[17rem] max-sm:w-[10rem]'}`} />
             <IoIosSearch className='size-6 cursor-pointer text-white hover:text-main-color' onClick={handleSearchClick} />
-            <div className='absolute right-10 top-12 w-[17rem] max-sm:w-[10rem] max-h-64 overflow-y-scroll'>
+            <div className='absolute right-10 top-[6.7vh] w-[17rem] max-sm:w-[10rem] max-h-64 overflow-y-scroll'>
                 {loading ? (
                     <Loader />
                 ) : (
